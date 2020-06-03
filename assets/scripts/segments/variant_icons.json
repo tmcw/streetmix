@@ -297,6 +297,11 @@
       "id": "truck",
       "title": "Truck"
     },
+    "microvan": {
+      "id": "microvan",
+      "title": "Microvan",
+      "enableWithFlag": "SEGMENT_MICROVAN"
+    },
     "av": {
       "id": "rideshare",
       "title": "Autonomous vehicle",

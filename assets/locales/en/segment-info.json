@@ -167,6 +167,7 @@
     "car-type|car": "Car",
     "car-type|sharrow": "Sharrow",
     "car-type|truck": "Truck",
+    "car-type|microvan": "Microvan",
     "car-type|av": "Autonomous vehicle",
     "car-type|motorcycle": "Motorcycle",
     "car-type|motorcycle-sidecar": "Motorcycle with sidecar",
