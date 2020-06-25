@@ -1,8 +1,8 @@
-import { API_URL } from '../app/config'
 import { trimStreetData } from './data_model'
 import { drawStreetThumbnail } from './thumbnail'
 import { getBuildingImageHeight } from '../segments/buildings'
 import { TILE_SIZE, BUILDING_SPACE } from '../segments/constants'
+import { deleteStreetImage } from '../util/api'
 import store, { observeStore } from '../store'
 
 // This can be adjusted to create much more hi-definition images
@@ -171,20 +171,8 @@ export async function saveStreetThumbnail (street, event) {
 
 // Handles removing street thumbnail from cloudinary.
 export async function deleteStreetThumbnail (streetId) {
-  const url = API_URL + 'v1/streets/images/' + streetId
-
-  const options = {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'text/plain'
-    }
-  }
-
   try {
-    const response = await window.fetch(url, options)
-    if (!response.ok) {
-      throw response
-    }
+    deleteStreetImage(streetId)
   } catch (error) {
     console.log('Unable to delete street thumbnail', error)
   }
